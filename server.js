@@ -9,10 +9,12 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3500;
 
 connectDB();
-
+// middlewares
 app.use(express.json());
-
 app.use(cookieParser());
+
+// routes
+app.use("/auth", require("./routes/authRoute"));
 
 // error handling middleware
 app.use(errorHandler);
