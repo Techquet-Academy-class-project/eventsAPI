@@ -8,4 +8,5 @@ const eventSchema = new mongoose.Schema({
   eventDate: { type: Date, default: Date.now },
 });
 
+// export
 module.exports = mongoose.model("Event", eventSchema);
