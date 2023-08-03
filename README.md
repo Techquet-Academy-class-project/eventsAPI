@@ -58,7 +58,7 @@ Each contributors should have two branches, one for creating the app using a jso
 To contribute :
 
 1. Clone this repo.
-   ``` $ git clone https://github.com/Techquet-Academy-class-project/receipeApi.git```
+   ``` $ git clone https://github.com/Techquet-Academy-class-project/eventsAPI.git```
 3. From the master branch, create your own branch, your branch format should be `Yourname/mongodb ` or `Yourname/jsondb`
    
    ```$ git checkout master ```
