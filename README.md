@@ -1,12 +1,12 @@
 # Events Web API
 
-### description of what you are expected to build.
+### project description.
 
-The goal of this project is to build a web API where users can sign up create events and have people purchase tickets to their event and purchase tickets to other users Event
+this project is a web API where users can sign up create events and have people purchase tickets to their event and purchase tickets to other users Event
 
 ## Routes
 
-Your API should have these endpoints.
+The API has these endpoints.
 
 #### No Auth Routes
 
@@ -50,21 +50,11 @@ userSchema{
 }
 ```
 
-## Contributing
+## Run the app
 
-Note: Only users added as contributors to this project are allowed!
-
-Each contributors should have two branches, one for creating the app using a json database and another using mongodb
-To contribute :
-
-1. Clone this repo.
+you can clone this repo.
    ` $ git clone https://github.com/Techquet-Academy-class-project/eventsAPI.git`
-2. From the master branch, create your own branch, your branch format should be `Yourname/mongodb ` or `Yourname/jsondb`
 
-   `$ git checkout master `
+or download the zip file
 
-   ` $ git checkout -b yourname/jsondb`
-
-3. write your codes, commit each feature you implement and push to your own branch
-
-   ` $ git push origin yourname/jsondb`
+run ` npm install ` or ` yarn install ` to install dependencies and ` npm start ` to start the app
