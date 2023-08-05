@@ -16,7 +16,7 @@ module.exports.auth = (req, res, next) => {
       if (!foundUser) return res.status(401).json({ message: "Unauthorized" });
 
       req.user = foundUser;
+      next();
     },
   );
-  next();
 };

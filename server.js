@@ -15,6 +15,8 @@ app.use(cookieParser());
 
 // routes
 app.use("/auth", require("./routes/authRoute"));
+app.use("/event", require("./routes/eventRoute"));
+app.use("/user", require("./routes/userRoute"));
 
 // error handling middleware
 app.use(errorHandler);
