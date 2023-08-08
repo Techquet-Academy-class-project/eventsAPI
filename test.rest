@@ -1,0 +1,95 @@
+GET http://localhost:3000/auth/purchase/:_id
+
+####
+#get users tickets
+GET http://localhost:3000/auth/users/tickets
+
+####
+#post event
+POST  http://localhost:3000/events/events
+Content-Type: application/json
+
+{
+    "createdBy": "64d0ca7523af3a2763cc3f3c",
+    "title": "singles meetup",
+    "availableTickets": 
+}
+
+####
+#Get event
+GET   http://localhost:3000/events/events
+
+####
+#Get events and available tickets
+GET  http://localhost:3000/events/events/available
+
+####
+#Get events with the number of available tickets
+GET  http://localhost:3000/events/events/:_id
+
+####
+#Create a user
+POST  http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "name": "osofagosh123",
+    "email": "osofagosh123@gmail.com",
+    "password": "123456",
+}
+
+####
+#Get a user with all his events
+GET   http://localhost:3000/users/users/:_id
+
+####
+#Login a user
+POST  http://localhost:3000/users/login
+Content-Type: application/json
+
+####
+#update password
+POST  http://localhost:3000/usersupdate/security
+Content-Type: application/json
+
+####
+#buy a ticket
+GET  http://localhost:3000/auth/purchase/:_id
+Content-Type: application/json
+
+####
+#User's purchased tickets
+GET  http://localhost:3000/auth/users/tickets
+Content-Type: application/json
+
+####
+#All events created by a user
+GET  http://localhost:3000/auth/users/events
+Content-Type: application/json
+
+####
+#All user's event
+GET  http://localhost:3000/auth/myevents
+Content-Type: application/json
+
+####
+#All events information created by a user
+GET  http://localhost:3000/auth/myevents/:_id
+Content-Type: application/json
+
+####
+#Get my profile
+GET  http://localhost:3000/auth/myprofile
+Content-Type: application/json
+
+####
+#Update my profile
+PUT  http://localhost:3000/auth/myprofile
+Content-Type: application/json
+
+####
+#Update an event
+PUT  http://localhost:3000/auth/update/eventId
+Content-Type: application/json
+
+
