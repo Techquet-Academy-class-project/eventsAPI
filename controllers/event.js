@@ -9,27 +9,27 @@ module.exports.createEvent = async (req, res) => {
     { email: req.user.email },
     { $push: { events: newEvent._id } },
   );
-  return res.status(200).json({ data: newEvent, success: true });
+  return res.status(400).json({ data: newEvent, success: true });
 };
 
 // get all events
 module.exports.getAllEvents = async (req, res) => {
   const getEvents = await Event.find();
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 
 // get all events with available tickets
 module.exports.getAvailableEvents = async (req, res) => {
   const getEvents = await Event.find({ availableTickets: { $ne: 0 } });
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 
 // get one event
 module.exports.getEvent = async (req, res) => {
   const getEvents = await Event.findOne({ _id: req.params.id });
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 // purchase an event's ticket
@@ -56,7 +56,7 @@ module.exports.purchaseTicket = async (req, res) => {
     { email: req.user.email },
     { $push: { tickets: getEvents._id } },
   );
-  return res.status(200).json({
+  return res.status(400).json({
     success: true,
     message: "ticket purchased successfully",
     availableTickets: getEvents.availableTickets,
@@ -69,7 +69,7 @@ module.exports.getMyEvent = async (req, res) => {
     _id: req.params.id,
     createdBy: req.user._id,
   }).populate("audience");
-  if (!getEvent) return res.status(200).json({ message: "no event found" });
+  if (!getEvent) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvent, success: true });
 };
 
@@ -80,6 +80,6 @@ module.exports.updateEvent = async (req, res) => {
     { $set: req.body },
     { new: true },
   );
-  if (!event) return res.status(400).json({ message: "event not found o" });
+  if (!event) return res.status(400).json({ message: "event not found" });
   return res.json({ data: event, success: true });
 };
