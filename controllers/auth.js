@@ -4,12 +4,6 @@ const bcrypt = require("bcryptjs");
 
 module.exports.createUser = async (req, res) => {
   const { password, ...others } = req.body;
-  // Check for duplicate username
-  // const duplicate = await User.findOne({ email });
-  // if (duplicate) {
-  //   return res.status(409).json({ message: "Duplicate username" });
-  // }
-
   // Hash password
   const hashedPwd = await bcrypt.hash(password, 10); // salt rounds
   const user = await User.create({ ...others, password: hashedPwd });
