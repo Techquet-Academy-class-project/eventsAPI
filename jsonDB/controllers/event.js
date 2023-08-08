@@ -47,7 +47,7 @@ module.exports.createEvent = async (req, res) => {
 // get all events
 module.exports.getAllEvents = async (req, res) => {
   const getEvents = await readEvent();
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 
@@ -55,7 +55,7 @@ module.exports.getAllEvents = async (req, res) => {
 module.exports.getAvailableEvents = async (req, res) => {
   const readEvents = await readEvent();
   const getEvents = readEvents.filter((event) => event.availableTickets !== 0);
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 
@@ -63,7 +63,7 @@ module.exports.getAvailableEvents = async (req, res) => {
 module.exports.getEvent = async (req, res) => {
   const readEvents = await readEvent();
   const getEvents = readEvents.find((event) => event._id === req.params.id);
-  if (!getEvents) return res.status(200).json({ message: "no event found" });
+  if (!getEvents) return res.status(400).json({ message: "no event found" });
   return res.json({ data: getEvents, success: true });
 };
 

@@ -89,7 +89,7 @@ module.exports.updateUserProfile = async (req, res) => {
     return res.status(400).json("you can only update email or name");
   const users = await readUser();
   const getUser = users.find((user) => user._id === req.user._id);
-  if (!getUser) return res.status(200).json({ message: "user not found" });
+  if (!getUser) return res.status(400).json({ message: "user not found" });
   if (req.body.name) getUser.name = req.body.name;
   if (req.body.email) getUser.email = req.body.email;
   await fs.writeFile(
@@ -105,7 +105,7 @@ module.exports.updateUserPassword = async (req, res) => {
     return res.status(400).json("you can only update password");
   const users = await readUser();
   const getUser = users.find((user) => user._id === req.user._id);
-  if (!getUser) return res.status(200).json({ message: "user not found" });
+  if (!getUser) return res.status(400).json({ message: "user not found" });
   const hashedPwd = await bcrypt.hash(req.body.password, 10); // salt rounds
   getUser.password = hashedPwd;
   await fs.writeFile(
