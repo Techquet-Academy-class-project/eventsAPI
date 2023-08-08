@@ -12,7 +12,6 @@ const {
 } = require("../controllers/user");
 const { auth } = require("../middlewares/jwtAuth");
 
-//get all blogs
 router.get("/tickets", auth, getUsersTickets);
 router.get("/events", auth, getUsersEvents);
 router.get("/myevents", auth, getCurrentUserEvents);
