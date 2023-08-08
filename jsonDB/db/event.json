@@ -1,0 +1,30 @@
+[
+  {
+    "title": "owambe",
+    "availableTickets": 3,
+    "eventDate": "12-12-2023",
+    "_id": "c60b968b-6808-49e1-bef9-eb4499fc16ea",
+    "createdBy": "6831387b-1a47-4f53-bfa4-759a09104cfc",
+    "audience": []
+  },
+  {
+    "title": "intro",
+    "availableTickets": 3,
+    "eventDate": "12-12-2023",
+    "_id": "02272857-e5ad-47f1-8bd1-3d7e83924b96",
+    "createdBy": "6831387b-1a47-4f53-bfa4-759a09104cfc",
+    "audience": []
+  },
+  {
+    "title": "introduction",
+    "availableTickets": 3,
+    "eventDate": "12-12-2023",
+    "_id": "95e6ac27-b0dc-4135-b06d-d59a6af1e343",
+    "createdBy": "ad0bc842-f3ae-41d5-915c-9f70433c84de",
+    "audience": [
+      "ad0bc842-f3ae-41d5-915c-9f70433c84de",
+      "ad0bc842-f3ae-41d5-915c-9f70433c84de",
+      "ad0bc842-f3ae-41d5-915c-9f70433c84de"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Ifeanyichukwu",
+    "password": "$2a$10$00JM9y4cybtnUdU7rgTr2.aozM3YWjIsuBzJAmwMmt3nDXLxdHCTq",
+    "email": "ify@gmail.com",
+    "_id": "ad0bc842-f3ae-41d5-915c-9f70433c84de",
+    "events": ["95e6ac27-b0dc-4135-b06d-d59a6af1e343"],
+    "tickets": [
+      "95e6ac27-b0dc-4135-b06d-d59a6af1e343",
+      "95e6ac27-b0dc-4135-b06d-d59a6af1e343",
+      "95e6ac27-b0dc-4135-b06d-d59a6af1e343"
+    ]
+  },
+  {
+    "name": "Ehiedu",
+    "password": "$2a$10$YyfzIgTXVH5lsuQ/URdvIuMCxKC8aeoL/aUUCEFrDdKPty8KzjMB.",
+    "email": "ehis@gmail.com",
+    "_id": "6831387b-1a47-4f53-bfa4-759a09104cfc",
+    "events": [
+      "c60b968b-6808-49e1-bef9-eb4499fc16ea",
+      "c60b968b-6808-49e1-bef9-eb4499fc16ea"
+    ],
+    "tickets": []
+  }
+]
