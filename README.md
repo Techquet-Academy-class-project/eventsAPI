@@ -68,3 +68,29 @@ To contribute :
 5. write your codes, commit each feature you implement and push to your own branch
 
    ``` $ git push origin yourname/jsondb```
+
+### All my routes
+
+#### No auth Routes
+* Get all events   /events/
+* Get events available     /events/available
+* Get an event excluding users who purchased tickets    /events/(eventId)
+* Get a user and all his events    users/(userId);
+* sign up  /auth/signup
+* login    /auth/login
+* logout   /auth/logout
+
+#### Auth routes
+* Post an event   /events/
+* Get/Purchase a ticket      /events/purchase/(eventId)
+* Get all my events    /events/myevents
+* Get al my events information      /events/myevents/(eventId)
+* Update (PUT) my profile   update/myprofile
+* Change password (PUT)     update/security
+* Update auth user event(PUT)    update/(eventId)
+* Delete auth user event     events/delete/(eventId)
+* Get all events       users/events
+* Get all purchased ticket        users/tickets
+* Get my profile    users/profile
+
+`Note`: "userId" and "eventId" written in parenthesis should be replaced with the userId and eventId respectively. 

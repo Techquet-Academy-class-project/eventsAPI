@@ -25,10 +25,10 @@ module.exports.signup = asyncErrorhandler(async (req, res)=>{
 
 //Login
 module.exports.login = asyncErrorhandler(async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     if(password.length<6) return res.status(500).json({sucess: false, message: 'password length must be greater than 5!'});
     //Find the user
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
     //Unauthenticated-invalid username
     if (!user) return res.status(404).json({ data: null, message: "Authentication failed", success: false });
     //Authenticated-username and password check.
