@@ -12,11 +12,10 @@ const {
 } = require("../controllers/event");
 const { auth } = require("../middlewares/jwtAuth");
 
-//get all blogs
 router.post("/", auth, createEvent);
 router.get("/", getAllEvents);
 router.get("/:id", getEvent);
-router.put("/:id", updateEvent);
+router.put("/:id", auth, updateEvent);
 router.get("/available", getAvailableEvents);
 router.get("/purchase/:id", auth, purchaseTicket);
 router.get("/myevent/:id", auth, getMyEvent);
