@@ -49,7 +49,6 @@ module.exports.purchaseTicket = async (req, res) => {
   audience.push(req.user._id);
   getEvents.availableTickets = getEvents.availableTickets - 1;
   await getEvents.save();
-  console.log(getEvents);
 
   // update the users ticket array
   await User.updateOne(
