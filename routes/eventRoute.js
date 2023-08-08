@@ -12,7 +12,6 @@ const {
 } = require("../controllers/event");
 const { auth } = require("../middlewares/jwtAuth");
 
-//get all blogs
 router.post("/", auth, createEvent);
 router.get("/", getAllEvents);
 router.get("/:id", getEvent);
