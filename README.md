@@ -3,7 +3,7 @@
 ### project description.
 
 this project is a web API where users can sign up create events and have people purchase tickets to their event and purchase tickets to other users Event
- link to the api documnetation with postman: (https://documenter.getpostman.com/view/10653175/2s9Xy2QXg3)
+ [link to the api documnetation with postman]: (https://documenter.getpostman.com/view/10653175/2s9Xy2QXg3)
 ## Routes
 
 The API has these endpoints.
