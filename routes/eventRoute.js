@@ -1,11 +1,12 @@
 const express = require("express")
-// const {Events} = require("../database/db")
-const {
+const { 
     createAnEvent, 
     getAllEvents, 
-    getAvailableEvent, 
-    getEventWithAvailableTicket
+    getEventWithAvailableTicket, 
+    getAvailableEvent 
 } = require("../controller/eventsController")
+// const {Events} = require("../database/db")
+
 const router = express.Router()
 
 router.use(express.json())

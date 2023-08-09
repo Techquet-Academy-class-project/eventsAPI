@@ -10,9 +10,10 @@ POST  http://localhost:3000/events/events
 Content-Type: application/json
 
 {
-    "createdBy": "64d0ca7523af3a2763cc3f3c",
+    "createdBy": "64d31613a8818cd51395fb0f",
     "title": "singles meetup",
-    "availableTickets": 
+    "availableTickets": 10,
+    "eventDate": "2023-12-25"
 }
 
 ####
@@ -35,7 +36,7 @@ Content-Type: application/json
 {
     "name": "osofagosh123",
     "email": "osofagosh123@gmail.com",
-    "password": "123456",
+    "password": "123456"
 }
 
 ####

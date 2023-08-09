@@ -1,7 +1,15 @@
 const express = require("express")
-const {Users} = require("../database/db")
-const {getAUserWithEvent, createAUser, loginAUser, logout, updatePassword} = require("../controller/usersController")
-const authorization = require("../middleware/authorizarion")
+// const {Users} = require("../database/db")
+// const {getAUserWithEvent, createAUser, loginAUser, logout, updatePassword} = require("../controller/usersController")
+// const authorization = require("../middleware/authorizarion")
+const { 
+    getAUserWithEvent, 
+    createAUser, 
+    loginAUser, 
+    updatePassword, 
+    logout 
+} = require("../controller/usersController")
+const { authorizeUser } = require("../middleware/authorizarion")
 const router = express.Router()
 
 
@@ -13,15 +21,16 @@ router.use(express.json())
 // * `POST /signup
 
 
-router.get("/users/:_id", getAUserWithEvent)
 
 router.post("/register", createAUser)
 
-router.post("/login", loginAUser)
+router.post("/login", authorizeUser, loginAUser)
 
-router.put ("/update/security", authorization, updatePassword)
+router.put ("/update/security", authorizeUser, updatePassword)
 
 router.post("/logout", logout)
+router.get("/users/:_id", getAUserWithEvent)
+
 
 
 module.exports = router

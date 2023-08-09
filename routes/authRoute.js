@@ -1,19 +1,21 @@
 const express = require("express")
-const {Users, Events} = require("../database/db")
-const authorization = require("../middleware/authorizarion")
-// const { count } = require("console")
-const {
-    updateMyEvent, 
-    updateMyProfile, 
-    getMyProfile, 
-    getAllPurchasedTickets, 
+// const {Users, Events} = require("../database/db")
+// const {authorization} = require("../middleware/authorizarion")
+const { 
+    buyTicket, 
+    usersTickets, 
+    getAllEventsCreatedByAUser, 
     getAllMyEvents, 
-    getAllEventsCreatedByAUser,
-    usersTickets,
-    buyTicket
+    getAllPurchasedTickets, 
+    getMyProfile, 
+    updateMyProfile, 
+    updateMyEvent 
 } = require("../controller/authController")
-const router = express.Router()
+const { authorizeUser } = require("../middleware/authorizarion")
+// const { count } = require("console")
 
+const router = express.Router()
+router.use(express.json())
 
 
 // * `GET purchase/eventId` Buy a ticket of an event
@@ -26,20 +28,21 @@ const router = express.Router()
 // * `PUT /update/Myprofile` [only email and name can be updated]
 // * `PUT /update/security` [only password can be updated here] and all other logged in devices token should be invalid
 
-router.get("/purchase/:_id", authorization, buyTicket)
+router.get("/purchase/:_id", authorizeUser, buyTicket)
 
-router.get("/users/tickets", authorization, usersTickets)
+router.get("/users/tickets", authorizeUser, usersTickets)
 
-router.get("/users/events", authorization, getAllEventsCreatedByAUser)
+router.get("/users/events", authorizeUser, getAllEventsCreatedByAUser)
 
-router.get("/myevents", authorization, getAllMyEvents)
+router.get("/myevents", authorizeUser, getAllMyEvents)
 
-router.get("/myevents/:_id", authorization, getAllPurchasedTickets)
+router.get("/myevents/:_id", authorizeUser, getAllPurchasedTickets)
 
-router.get("/myprofile", authorization, getMyProfile)
+router.get("/myprofile", authorizeUser, getMyProfile)
 
-router.put("/update/myprofile", authorization, updateMyProfile)
+router.put("/update/myprofile", authorizeUser, updateMyProfile)
 
-router.put("/update/:id", authorization, updateMyEvent)
+router.put("/update/:id", authorizeUser, updateMyEvent)
+
 
 module.exports = router
