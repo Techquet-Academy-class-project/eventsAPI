@@ -12,7 +12,7 @@ const eventSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
     //userSchema
     name : {type: String, required:[true, "name is required"]},
-    email: {type: String, required:[true, "email is required"], unique: true},
+    email: {type: String, required:[true, "email is required"]},
     password: {type: String, minLength: 6, required:[true, "password is required"]},
     tickets : [{type: String}],
     events : [{type: mongoose.Schema.ObjectId, ref: "event"}],

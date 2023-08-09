@@ -13,18 +13,19 @@ router.use(express.json())
 module.exports.getAUserWithEvent =  asyncErrorHandler(async function(req, res){
     //finding a user with all his events, excluding the users who both the tickets
     const userId = await Users.findById({_id: req.params._id}, "-tickets").populate("events")
-    if(!useId) return res.status(404).json({data: null, success: true, message: "user not found"})
+    if(!userId) return res.status(404).json({data: null, success: true, message: "user not found"})
     res.status(200).json({data: userId, success: true, message: "this is a user and all his events"})
     // res.send("this is a user and all his events")
 })
 
 module.exports.createAUser = asyncErrorHandler(async function(req, res){
     const {password, ...others} = req.body
+    if(password.length < 6  || password.length > 15) return res.json({message : "password length must be less than 15 and greater than 5", success : false})
     const hashedpassword = await bcrypt.hash(password, 10)
     const user = await {password:hashedpassword, ...others}
     const newUser = await Users.create(user)
 
-    const token = jwt.sign("authorization", process.env.JWTSECRETE)
+    const token = jwt.sign({_id: newUser._id}, process.env.JWTSECRETE)
     res.cookie("authorization", token)
     res.status(200).json({data: newUser, success: true, message: "user registered successfully"})
     // res.send("signup successfull")

@@ -23,9 +23,10 @@ router.post("/register", createAUser)
 
 router.post("/login", authorizeUser, loginAUser)
 
-router.put ("/update/security", authorizeUser, updatePassword)
+router.put ("/update/security/:_id", authorizeUser, updatePassword)
 
 router.post("/logout", logout)
+
 router.get("/users/:_id", getAUserWithEvent)
 
 

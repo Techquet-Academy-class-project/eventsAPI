@@ -9,7 +9,7 @@ module.exports.buyTicket = asyncErrorHandler(async function(req, res){
     //Buy a ticket of an event
     const myEvent = await Events.findOne({_id: req.params._id}) 
     console.log(myEvent)
-    if(!myEvent) return res.status(400).json({data: null, message: "no event found"})
+    if(!myEvent) return res.status(404).json({data: null, message: "no event found"})
     const purchasedTicket = await myEvent.createdBy.equals(req.user._id)
     if(purchasedTicket) return res.status(400).json({message: "you can only purchase a ticket for an event you did not create", success: false})
     //check the number of tickets available

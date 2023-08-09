@@ -1,10 +1,13 @@
 const { asyncErrorHandler } = require("../errorHandler/asyncerrorhandler")
 const jwt = require("jsonwebtoken")
 const {User} = require("../database/db")
-
+const cookies = require("cookie-parser")
+require("dotenv").config()
 module.exports.authorizeUser = asyncErrorHandler(async function(req,res,next){
-    // check if token exist
+    console.log("hit middleware")  
+  // check if token exist
     const token = req.cookies.authorization
+    console.log(token)
     if(!token) return res.status(401).json({message : "Authentication failed, please log in", success : true, data : null})
       // check if token is valid
       const decodedeData = jwt.verify(token, process.env.JWTSECRET)
@@ -16,6 +19,7 @@ module.exports.authorizeUser = asyncErrorHandler(async function(req,res,next){
       if(!user) return res.json({data: user, message : "No user found", success : false})
     // if they all checks out call next
         req.user = user
+      console.log("this is the end of middleware")
     next()
     // if not we want to respond with an erro
   })

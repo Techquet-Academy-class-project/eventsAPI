@@ -1,57 +1,83 @@
-GET http://localhost:3000/auth/purchase/:_id
+
+
+GET http://localhost:3000/auth/purchase/64d35322ca20493c2004ab6c
 
 ####
 #get users tickets
 GET http://localhost:3000/auth/users/tickets
 
 ####
-#post event
+#post event WORKING
 POST  http://localhost:3000/events/events
 Content-Type: application/json
 
 {
-    "createdBy": "64d31613a8818cd51395fb0f",
+    "createdBy": "64d352eeca20493c2004ab6a",
     "title": "singles meetup",
     "availableTickets": 10,
     "eventDate": "2023-12-25"
 }
 
 ####
-#Get event
+#post event WOEKING
+POST  http://localhost:3000/events/events
+Content-Type: application/json
+
+{
+    "createdBy": "64d352eeca20493c2004ab6a",
+    "title": "married meetup",
+    "availableTickets": 9,
+    "eventDate": "2023-11-25"
+}
+
+####
+#Get event WORKING
 GET   http://localhost:3000/events/events
 
 ####
-#Get events and available tickets
+#Get events and available tickets WORKING
 GET  http://localhost:3000/events/events/available
 
 ####
-#Get events with the number of available tickets
-GET  http://localhost:3000/events/events/:_id
+#Get events with the number of available tickets WORKING
+GET  http://localhost:3000/events/events/64d35ed7ab8f36a152f17e39
 
 ####
-#Create a user
+#Create a user WORKING
 POST  http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "name": "osofagosh123",
-    "email": "osofagosh123@gmail.com",
-    "password": "123456"
+    "name": "osofagosh456",
+    "email": "osofagosh456@gmail.com",
+    "password": "1234567",
+    "events": "64d35ed8ab8f36a152f17e3c"
 }
 
 ####
-#Get a user with all his events
-GET   http://localhost:3000/users/users/:_id
+#Get a user with all his events // WORKING
+GET   http://localhost:3000/users/users/64d36a5f2907ca91d19947e9
 
 ####
 #Login a user
 POST  http://localhost:3000/users/login
 Content-Type: application/json
 
+{
+    "name": "osofagosh456",
+    "email": "osofagosh456@gmail.com",
+    "password": "1234567"
+}
+
 ####
 #update password
-POST  http://localhost:3000/usersupdate/security
+PUT  http://localhost:3000/users/update/security/64d352eeca20493c2004ab6a
 Content-Type: application/json
+
+{
+    "password": "1234567"
+
+}
 
 ####
 #buy a ticket
