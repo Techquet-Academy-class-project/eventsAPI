@@ -90,7 +90,7 @@ To contribute :
 * Update auth user event(PUT)    update/(eventId)
 * Delete auth user event     events/delete/(eventId)
 * Get all events       users/events
-* Get all purchased ticket        users/tickets
+* Get all logged in users purchased ticket        users/tickets
 * Get my profile    users/profile
 
 `Note`: "userId" and "eventId" written in parenthesis should be replaced with the userId and eventId respectively. 

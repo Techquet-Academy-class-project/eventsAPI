@@ -47,7 +47,7 @@ module.exports.purchaseATicket = asyncErrorhandler(async (req, res) =>{
     const formattedEventDate = new Date(event.eventDate).getTime();
     
     const todaysTimestamp  = new Date().getTime()
-    console.log(formattedEventDate, todaysTimestamp);
+    //Check if the event date has expired
     if(formattedEventDate < todaysTimestamp) return res.status(403).json({message: 'Event date has expired! You cannot purchase a ticket!', success: false})
 
     //Check if there's available ticket
@@ -77,7 +77,8 @@ module.exports.purchaseATicket = asyncErrorhandler(async (req, res) =>{
 
 //Get all the tickets the loggedin users purchased--auth route
 module.exports.getAllPurchasedTickets = asyncErrorhandler(async (req, res) =>{
-    const allTickets= await User.find({}, 'tickets').populate('tickets', 'title eventDate')
+    //Personal Note: I could use either a string for the projections or an object e.g. 'audience events' or {audience: 1, events: 1}
+    const allTickets= await User.find({_id: req.authUser._id}, 'tickets').populate('tickets', 'title eventDate')
     if(!allTickets) return res.status(404).json({message: 'Not found!', success: false})
     return res.status(200).json({allPurchasedTickets: allTickets, success: true})
 });
@@ -124,7 +125,7 @@ module.exports.updateAuthUserEvent = asyncErrorhandler(async (req, res) =>{
 module.exports.DeleteAuthUserEvent = asyncErrorhandler(async (req, res) =>{
     const eventId = req.params.eventId;
     const event = await Event.findOne({_id: eventId});
-    console.log(event.createdBy, req.authUser._id);
+
     //is the user the owner of event
     if(event.createdBy.toString() !== req.authUser._id.toString()) return res.status(401).json({message: 'You are unauthorized to delete this event!!', success: false});
     if(!event) return res.status(404).json({message: 'Not found!!', success: 'false'});

@@ -18,7 +18,7 @@ module.exports.authorizeUser = asyncErrorhandler(async (req, res, next) =>{
 
     const lastTokenDate = decoded.iat * 1000;
     const passwordUpdatedTime = new Date(user.lastChangedPassword).getTime();
-    
+    //Further user authentication
     if(lastTokenDate < passwordUpdatedTime ) return res.status(401).json({message: 'Your cookie session has expired, please login again', success: false})
 
     //store authenticated user id in the request object.

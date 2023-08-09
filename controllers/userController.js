@@ -6,7 +6,6 @@ const { asyncErrorhandler } = require('../async-errorhandler/async-errorhandler'
 module.exports.getAUser = asyncErrorhandler(async (req, res) => {
     const userId = req.params.userId;
     const user = await User.findOne({_id: userId}, {password: 0, tickets: 0}).populate('events', '-audience');
-    console.log('After');
     if (!user) return res.status(404).json({ message: 'No user found', success: false });
     return res.status(201).json({ data: user, success: true });
 });
