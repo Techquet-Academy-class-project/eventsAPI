@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 const {asyncErrorHandler} = require("../errorHandler/asyncerrorhandler")
 const cookies = require("cookie-parser")
-// const { useId } = require("react")
 require("dotenv").config()
 
 
@@ -59,4 +58,3 @@ module.exports.logout = asyncErrorHandler(async function(req, res){
     res.status(200).json({message: "logout successful", success: true})
 })
 
-// module.exports = {getAUserWithEvent, createAUser, loginAUser, logout, updatePassword}

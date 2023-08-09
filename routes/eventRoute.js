@@ -5,7 +5,6 @@ const {
     getEventWithAvailableTicket, 
     getAvailableEvent 
 } = require("../controller/eventsController")
-// const {Events} = require("../database/db")
 
 const router = express.Router()
 

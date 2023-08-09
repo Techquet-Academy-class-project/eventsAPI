@@ -1,7 +1,4 @@
 const express = require("express")
-// const {Users} = require("../database/db")
-// const {getAUserWithEvent, createAUser, loginAUser, logout, updatePassword} = require("../controller/usersController")
-// const authorization = require("../middleware/authorizarion")
 const { 
     getAUserWithEvent, 
     createAUser, 

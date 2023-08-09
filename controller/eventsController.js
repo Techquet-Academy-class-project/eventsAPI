@@ -1,10 +1,6 @@
 const express = require("express")
 const {Events} = require("../database/db")
-// const jwt = require("jsonwebtoken")
-// const bcrypt = require("bcryptjs")
 const {asyncErrorHandler} = require("../errorHandler/asyncerrorhandler")
-// const cookie = require("cookie-parser")
-// require("dotenv").config()
 const router =express.Router()
 router.use(express.json())
 
@@ -35,5 +31,4 @@ module.exports.getEventWithAvailableTicket = asyncErrorHandler(async function(re
     // res.send("these are all the event information and the number of available tickets")
 })
 
-// module.exports = {createAnEvent, getAllEvents, getAvailableEvent, getEventWithAvailableTicket}
 

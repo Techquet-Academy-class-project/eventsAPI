@@ -1,6 +1,4 @@
 const express = require("express")
-// const {Users, Events} = require("../database/db")
-// const {authorization} = require("../middleware/authorizarion")
 const { 
     buyTicket, 
     usersTickets, 
@@ -12,7 +10,6 @@ const {
     updateMyEvent 
 } = require("../controller/authController")
 const { authorizeUser } = require("../middleware/authorizarion")
-// const { count } = require("console")
 
 const router = express.Router()
 router.use(express.json())

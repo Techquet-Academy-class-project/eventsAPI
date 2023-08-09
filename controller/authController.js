@@ -99,16 +99,7 @@ module.exports.updateMyEvent = asyncErrorHandler(async function(req, res){
     // res.send("update the logged in users event")
 })
 
-// module.exports = {
-//     updateMyEvent, 
-//     updateMyProfile, 
-//     getMyProfile, 
-//     getAllPurchasedTickets, 
-//     getAllMyEvents, 
-//     getAllEventsCreatedByAUser,
-//     usersTickets,
-//     buyTicket
-// }
+
 
 
 
