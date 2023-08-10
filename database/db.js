@@ -2,11 +2,11 @@ const mongoose = require("mongoose")
 
 const eventSchema = new mongoose.Schema({
     //eventSchema
-    createdBy : [{type: mongoose.Schema.ObjectId, ref: "user", required:[true, "all events most be created by a user"]}], 
+    createdBy : [{type: mongoose.Schema.ObjectId, ref: "user", required: true}], 
     title : {type: String, required:[true, "title is required"]},
     availableTickets :{type: Number, required: true},
     audience : [{type: mongoose.Schema.ObjectId, ref: "user"}],
-    eventDate : {type: Date, required:true}
+    eventDate : {type: Date, required: true}
 })
 
 const userSchema = new mongoose.Schema({

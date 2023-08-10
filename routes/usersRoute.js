@@ -21,7 +21,7 @@ router.use(express.json())
 
 router.post("/register", createAUser)
 
-router.post("/login", authorizeUser, loginAUser)
+router.post("/login", loginAUser)
 
 router.put ("/update/security/:_id", authorizeUser, updatePassword)
 

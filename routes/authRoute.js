@@ -25,21 +25,24 @@ router.use(express.json())
 // * `PUT /update/Myprofile` [only email and name can be updated]
 // * `PUT /update/security` [only password can be updated here] and all other logged in devices token should be invalid
 
-router.get("/purchase/:_id", authorizeUser, buyTicket)
 
 router.get("/users/tickets", authorizeUser, usersTickets)
 
 router.get("/users/events", authorizeUser, getAllEventsCreatedByAUser)
 
-router.get("/myevents", authorizeUser, getAllMyEvents)
+router.get("/myprofile/:_id", getMyProfile)
 
-router.get("/myevents/:_id", authorizeUser, getAllPurchasedTickets)
+router.get("/allMyevents/:_id", authorizeUser, getAllMyEvents)
 
-router.get("/myprofile", authorizeUser, getMyProfile)
+router.get("/myevents", authorizeUser, getAllPurchasedTickets)
 
-router.put("/update/myprofile", authorizeUser, updateMyProfile)
+
+router.put("/update/myprofile/:_id", authorizeUser, updateMyProfile)
 
 router.put("/update/:id", authorizeUser, updateMyEvent)
+
+router.get("/purchase/:_id", authorizeUser, buyTicket)
+
 
 
 module.exports = router
