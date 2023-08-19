@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Nicholas Okeke",
+        "email": "nicodinaka87@gmail.com",
+        "password": "$2a$10$3ZBjXyj5Z.Dzkvg3WIYWieAwnS7VxYOEG3EXNgGfzayPjcO/p1Rmy",
+        "lastChangedPassword": 1692402214382,
+        "_id": "9723b36f-4c04-4d92-b297-8e0b9fc57823",
+        "tickets": [],
+        "events": [
+            "23652da5-542e-411a-ab76-adf1b01b97e1",
+            "b3581c9e-2c7d-48fe-8bb9-215caeb7a8f0",
+            "d73aa7fe-a060-4133-bb69-ed183aaacbd7",
+            "53438c00-1761-4532-bca1-85b07f0e4ed5"
+        ]
+    },
+    {
+        "name": "Okeke",
+        "email": "odiniks87.okeke87@gmail.com",
+        "password": "$2a$10$AwH555oyIB3jMbclYcVXq.Jsj719LUixIn.uuwJTRbLglKVkvWk5u",
+        "lastChangedPassword": "2023-08-18T23:53:08.873Z",
+        "_id": "667b863f-868c-41c1-8058-37b2a0a6a7f6",
+        "tickets": [
+            "d73aa7fe-a060-4133-bb69-ed183aaacbd7"
+        ],
+        "events": []
+    }
+]
